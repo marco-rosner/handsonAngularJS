@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>AngularJS - Controller</title>
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/bill.controller.js"></script>
+</head>
+<body ng-controller="BillController as billCtrl">
+	<input type="text" ng-model="query.description">
+	<hr/>
+	<ul>
+		<li ng-repeat="bill in billCtrl.Bills | filter:query">{{bill.description}} - {{bill.value}}</li>
+	</ul>
+</body>
+</html>
